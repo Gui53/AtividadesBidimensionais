@@ -1,3 +1,4 @@
+
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -10,6 +11,7 @@ public class Main {
 
         int coluna = 0;
         int somaColuna = 0;
+        String resultado = "";
         
         //Soma primeira linha
         for (int i = 0; i < bidimensao.length; i++) {
@@ -18,26 +20,17 @@ public class Main {
 
         JOptionPane.showMessageDialog(null, "Soma da primeira coluna: " + somaColuna);
          
-        
+
         //Soma cada linha
-        for (int i = 0; i < bidimensao.length; i++) {
-            somaColuna += bidimensao[i][coluna];
-        }
-        JOptionPane.showMessageDialog(null, "Soma da primeira coluna: " + somaColuna);
-        somaColuna = 0;
-        coluna += 1;
+        for (int j = 0; j < bidimensao[0].length; j++) {
 
-        for (int i = 0; i < bidimensao.length; i++) {
-            somaColuna += bidimensao[i][coluna];
-        }
-        JOptionPane.showMessageDialog(null, "Soma da segunda coluna: " + somaColuna);
-        somaColuna = 0;
-        coluna += 1;
+            for (int i = 0; i < bidimensao.length; i++) {
+                somaColuna += bidimensao[i][j];
+            }
+            resultado += "Soma da coluna " + (j + 1) + ": " + somaColuna + "\n";
+            somaColuna = 0;
 
-        for (int i = 0; i < bidimensao.length; i++) {
-            somaColuna += bidimensao[i][coluna];
         }
-        JOptionPane.showMessageDialog(null, "Soma da terceira coluna: " + somaColuna);
-
+        JOptionPane.showMessageDialog(null, resultado);
     }
 }
