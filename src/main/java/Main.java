@@ -32,5 +32,13 @@ public class Main {
 
         }
         JOptionPane.showMessageDialog(null, resultado);
+        
+        int produto = 1,linha = 0;
+        
+        for(int j = 0; j < bidimensao[linha].length; j++){
+            produto *= bidimensao[linha][j];
+        }
+        
+        JOptionPane.showMessageDialog(null, "Produto da primeira linha: " + produto);
     }
 }
