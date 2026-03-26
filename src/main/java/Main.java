@@ -13,7 +13,7 @@ public class Main {
         int somaColuna = 0;
         String resultado = "";
         
-        //Soma primeira linha
+        //Soma primeira coluna
         for (int i = 0; i < bidimensao.length; i++) {
             somaColuna += bidimensao[i][coluna];
         }
@@ -21,7 +21,7 @@ public class Main {
         JOptionPane.showMessageDialog(null, "Soma da primeira coluna: " + somaColuna);
          
 
-        //Soma cada linha
+        //Soma cada coluna
         for (int j = 0; j < bidimensao[0].length; j++) {
 
             for (int i = 0; i < bidimensao.length; i++) {
@@ -33,6 +33,7 @@ public class Main {
         }
         JOptionPane.showMessageDialog(null, resultado);
         
+        //Multiplicação da primeira linha
         int produto = 1,linha = 0;
         
         for(int j = 0; j < bidimensao[linha].length; j++){
