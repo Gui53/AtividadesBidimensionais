@@ -22,7 +22,7 @@ public class Main {
         somaColuna = 0;
 
         //Soma cada coluna
-        for (int j = 0; j < bidimensao[0].length; j++) {
+        for (int j = 0; j < bidimensao[j].length; j++) {
 
             for (int i = 0; i < bidimensao.length; i++) {
                 somaColuna += bidimensao[i][j];
@@ -61,9 +61,33 @@ public class Main {
                 somaTotal += bidimensao[i][j];
             }
         }
-        media = somaTotal / (bidimensao.length * bidimensao[0].length);
+        media = (double) somaTotal / (bidimensao.length * bidimensao[0].length);
 
         JOptionPane.showMessageDialog(null, "Média da matriz: " + media);
 
+        //Números maiores que a média
+        somaTotal = 0;
+        media = 0;
+        String maiores = "";
+
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                somaTotal += bidimensao[i][j];
+            }
+        }
+
+        media = (double) somaTotal / (bidimensao.length * bidimensao[0].length);
+        
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                if(bidimensao[i][j] > media){
+                    maiores += "O número " + bidimensao[i][j] + " é maior que a média " + media + "\n";
+                }
+            }
+        }
+        if(maiores.equals("")){
+            maiores = "Nenhum número é maior que a média";
+        }
+        JOptionPane.showMessageDialog(null, maiores);
     }
 }
