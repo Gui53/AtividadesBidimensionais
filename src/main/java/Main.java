@@ -45,8 +45,8 @@ public class Main {
         //Soma de todos os elementos 
         int somaTotal = 0;
 
-        for (int i = 0; i < bidimensao[0].length; i++) {
-            for (int j = 0; j < bidimensao.length; j++) {
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
                 somaTotal += bidimensao[i][j];
             }
         }
