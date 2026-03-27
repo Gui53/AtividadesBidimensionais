@@ -52,5 +52,18 @@ public class Main {
         }
         JOptionPane.showMessageDialog(null, "Soma total dos elementos: " + somaTotal);
 
+        //Média
+        double media = 0;
+        somaTotal = 0;
+
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                somaTotal += bidimensao[i][j];
+            }
+        }
+        media = somaTotal / (bidimensao.length * bidimensao[0].length);
+
+        JOptionPane.showMessageDialog(null, "Média da matriz: " + media);
+
     }
 }
