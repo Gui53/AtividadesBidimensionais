@@ -5,9 +5,10 @@ public class Main {
 
     public static void main(String[] args) {
         int[][] bidimensao = {
-            {1, 5, 6},
-            {8, 3, 2},
-            {7, 9, 4}};
+            //0   1  2
+            /*0*/{1, 5, 6},
+            /*1*/ {8, 3, 2},
+            /*2*/ {7, 9, 4}};
 
         int coluna = 0;
         int somaColuna = 0;
@@ -124,24 +125,49 @@ public class Main {
         }
 
         JOptionPane.showMessageDialog(null, "O número " + menor + " é o menor número da matriz e se encontra em [" + linhaMenor + "][" + colunaMenor + "]");
-        
+
         //Calcula e mostra a soma dos elementos na diagonal principal 
         int controle = 0;
-        int somaD = 0;
-        
+        int somaDP = 0;
+
         for (int i = 0; i < bidimensao.length; i++) {
             for (int j = 0; j < bidimensao[i].length; j++) {
-                if (i  == controle && j == controle){
-                    somaD += bidimensao[i][j];
-                    controle += 1;        
-                } 
+                if (i == controle && j == controle) {
+                    somaDP += bidimensao[i][j];
+                    controle += 1;
+                }
             }
         }
-        JOptionPane.showMessageDialog(null, "A soma da diagonal principal é: " + somaD);
-        
+        JOptionPane.showMessageDialog(null, "A soma da diagonal principal é: " + somaDP);
+
         //Forma otimizada
         /*for (int i = 0; i < bidimensao.length; i++) {
             somaD += bidimensao[i][i];
         }*/
+        //Calcula e mostra a soma dos elementos da diagonal secundária
+        int controleSi = 0;
+        int controleSj = 2;
+        int somaDS = 0;
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                if (i == controleSi && j == controleSj) {
+                    somaDS += bidimensao[i][j];
+                    controleSi += 1;
+                    controleSj -= 1;
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, "A soma da diagonal secundária é: " + somaDS);
+
+        /*somaDS = 0;
+        int n = bidimensao.length;
+        JOptionPane.showMessageDialog(null, n);
+
+        for (int i = 0; i < n; i++) {
+            somaDS += bidimensao[i][n - 1 - i];
+        }
+
+        JOptionPane.showMessageDialog(null,
+                "A soma da diagonal secundária é: " + somaDS);*/
     }
 }
