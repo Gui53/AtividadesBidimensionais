@@ -124,6 +124,24 @@ public class Main {
         }
 
         JOptionPane.showMessageDialog(null, "O número " + menor + " é o menor número da matriz e se encontra em [" + linhaMenor + "][" + colunaMenor + "]");
-
+        
+        //Calcula e mostra a soma dos elementos na diagonal principal 
+        int controle = 0;
+        int somaD = 0;
+        
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                if (i  == controle && j == controle){
+                    somaD += bidimensao[i][j];
+                    controle += 1;        
+                } 
+            }
+        }
+        JOptionPane.showMessageDialog(null, "A soma da diagonal principal é: " + somaD);
+        
+        //Forma otimizada
+        /*for (int i = 0; i < bidimensao.length; i++) {
+            somaD += bidimensao[i][i];
+        }*/
     }
 }
