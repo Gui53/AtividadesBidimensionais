@@ -4,21 +4,26 @@ import javax.swing.JOptionPane;
 public class Main {
 
     public static void main(String[] args) {
-        int[][] bidimensao = {
-            //0   1  2
-            /*0*/{1, 5, 6},
-            /*1*/ {8, 3, 2},
-            /*2*/ {7, 9, 4}};
+        int[][] bidimensao = new int[3][3];
+        
+        int valor = 0;
+        
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                valor = Integer.parseInt(JOptionPane.showInputDialog("Digite um valor"));
+                
+                bidimensao[i][j] = valor;
+            }  
+        }
 
+        //Soma primeira coluna
         int coluna = 0;
         int somaColuna = 0;
         String resultado = "";
 
-        //Soma primeira coluna
         for (int i = 0; i < bidimensao.length; i++) {
             somaColuna += bidimensao[i][coluna];
         }
-
         JOptionPane.showMessageDialog(null, "Soma da primeira coluna: " + somaColuna);
         somaColuna = 0;
 
@@ -30,7 +35,6 @@ public class Main {
             }
             resultado += "Soma da coluna " + (j + 1) + ": " + somaColuna + "\n";
             somaColuna = 0;
-
         }
         JOptionPane.showMessageDialog(null, resultado);
 
@@ -40,7 +44,6 @@ public class Main {
         for (int j = 0; j < bidimensao[linha].length; j++) {
             produto *= bidimensao[linha][j];
         }
-
         JOptionPane.showMessageDialog(null, "Produto da primeira linha: " + produto);
 
         //Soma de todos os elementos 
@@ -102,7 +105,6 @@ public class Main {
                     maior = bidimensao[i][j];
                     linhaMaior = i;
                     colunaMaior = j;
-
                 }
             }
         }
