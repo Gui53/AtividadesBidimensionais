@@ -1,4 +1,5 @@
 
+
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -22,7 +23,7 @@ public class Main {
         somaColuna = 0;
 
         //Soma cada coluna
-        for (int j = 0; j < bidimensao[j].length; j++) {
+        for (int j = 0; j < bidimensao[0].length; j++) {
 
             for (int i = 0; i < bidimensao.length; i++) {
                 somaColuna += bidimensao[i][j];
@@ -89,5 +90,24 @@ public class Main {
             maiores = "Nenhum número é maior que a média";
         }
         JOptionPane.showMessageDialog(null, maiores);
+        
+        //O maior elemento da matriz e sua posição
+        int maior = bidimensao[0][0];
+        int linhaMaior = 0;
+        int colunaMaior = 0;
+
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                if (bidimensao[i][j] > maior) {
+                    maior = bidimensao[i][j];
+                    linhaMaior = i;
+                    colunaMaior = j;
+
+                }
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "O número " + maior + " é o maior número da matriz e se encontra em [" + linhaMaior + "][" + colunaMaior + "]");
+
     }
 }
