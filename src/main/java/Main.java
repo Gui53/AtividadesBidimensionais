@@ -1,5 +1,4 @@
 
-
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -78,19 +77,19 @@ public class Main {
         }
 
         media = (double) somaTotal / (bidimensao.length * bidimensao[0].length);
-        
+
         for (int i = 0; i < bidimensao.length; i++) {
             for (int j = 0; j < bidimensao[i].length; j++) {
-                if(bidimensao[i][j] > media){
+                if (bidimensao[i][j] > media) {
                     maiores += "O número " + bidimensao[i][j] + " é maior que a média " + media + "\n";
                 }
             }
         }
-        if(maiores.equals("")){
+        if (maiores.equals("")) {
             maiores = "Nenhum número é maior que a média";
         }
         JOptionPane.showMessageDialog(null, maiores);
-        
+
         //O maior elemento da matriz e sua posição
         int maior = bidimensao[0][0];
         int linhaMaior = 0;
@@ -106,8 +105,25 @@ public class Main {
                 }
             }
         }
-        
+
         JOptionPane.showMessageDialog(null, "O número " + maior + " é o maior número da matriz e se encontra em [" + linhaMaior + "][" + colunaMaior + "]");
+
+        //O menor elemento da matriz e sua posição
+        int menor = bidimensao[0][0];
+        int linhaMenor = 0;
+        int colunaMenor = 0;
+
+        for (int i = 0; i < bidimensao.length; i++) {
+            for (int j = 0; j < bidimensao[i].length; j++) {
+                if (menor > bidimensao[i][j]) {
+                    menor = bidimensao[i][j];
+                    linhaMenor = i;
+                    colunaMenor = j;
+                }
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "O número " + menor + " é o menor número da matriz e se encontra em [" + linhaMenor + "][" + colunaMenor + "]");
 
     }
 }
